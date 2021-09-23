@@ -545,10 +545,13 @@ class WhatsnewView(L10nTemplateView):
         'firefox/whatsnew/whatsnew-fx92-fr.html': ['firefox/whatsnew/whatsnew-fx90.ftl', 'firefox/whatsnew/whatsnew'],
         'firefox/whatsnew/whatsnew-fx92-vpn-en.html': ['firefox/whatsnew/whatsnew', 'products/vpn/shared'],
         'firefox/whatsnew/whatsnew-fx92-vpn-fr.html': ['firefox/whatsnew/whatsnew', 'products/vpn/shared'],
+        'firefox/whatsnew/whatsnew-fx93-en-v1.html': ['firefox/whatsnew/whatsnew'],
+        'firefox/whatsnew/whatsnew-fx93-en-v2.html': ['firefox/whatsnew/whatsnew'],
+        'firefox/whatsnew/whatsnew-fx93-en-v3.html': ['firefox/whatsnew/whatsnew'],
     }
 
     # place expected ?v= values in this list
-    variations = ['1', '2']
+    variations = ['1', '2', '3']
 
     def get_context_data(self, **kwargs):
         ctx = super(WhatsnewView, self).get_context_data(**kwargs)
@@ -618,6 +621,15 @@ class WhatsnewView(L10nTemplateView):
                 template = 'firefox/developer/whatsnew.html'
             else:
                 template = 'firefox/whatsnew/index.html'
+        elif version.startswith('93.') and locale.startswith('en-'):
+            if variant == '1':
+                template = 'firefox/whatsnew/whatsnew-fx93-en-v1.html'
+            elif variant == '2':
+                template = 'firefox/whatsnew/whatsnew-fx93-en-v2.html'
+            elif variant == '3':
+                template = 'firefox/whatsnew/whatsnew-fx93-en-v3.html'
+            else:
+                template = 'firefox/whatsnew/whatsnew-fx93-en-v3.html'
         elif version.startswith('92.') and locale.startswith('en-'):
             template = 'firefox/whatsnew/whatsnew-fx92-en.html'
         elif version.startswith('92.') and locale == 'de':
