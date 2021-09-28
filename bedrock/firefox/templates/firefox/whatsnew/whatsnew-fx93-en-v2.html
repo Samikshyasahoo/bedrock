@@ -28,7 +28,10 @@
 
   <section class="wnp-content-main">
     <div class="mzp-l-content mzp-t-content-lg">
-      <h1 class="wnp-main-title">{{ high_res_img('img/firefox/whatsnew/whatsnew93/hero-v2-en.jpg', {'alt': 'Be You or Blur You', 'loading': 'lazy'}) }}</h1>
+      <div class="hero">
+        <h1 class="wnp-main-title">Be you or blur you</h1>
+      </div>
+
       <p class="wnp-main-tagline">It’s Cyber Security Month — now’s the time to protect your vulnerable data online. <strong>Mozilla’s Virtual Private Network</strong> blurs your location and browsing activity, keeping you safe from prying eyes.</p>
 
       <div class="wnp-main-cta">
@@ -46,4 +49,5 @@
 
 {% block js %}
   {{ js_bundle('firefox_whatsnew_update') }}
+  {# js_bundle('firefox_whatsnew_93_v2_cycle') #}
 {% endblock %}
