@@ -1171,12 +1171,6 @@
     },
     {
       "files": [
-        "js/firefox/whatsnew/whatsnew93-v2-cycle.js"
-      ],
-      "name": "firefox_whatsnew_93_v2_cycle"
-    },
-    {
-      "files": [
         "protocol/js/protocol-newsletter.js"
       ],
       "name": "legal"
